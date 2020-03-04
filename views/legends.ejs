@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="body">
+    <% if(pageID == "legendsList"){ %>
+    <div class="container">
+        <div class="row">
+            <img class="img-cont" src="/images/pageImgs/legends.jpg" alt="main image of apex">
+        </div>
+    </div>
+    <% } %>
+    <% if(pageID != "legendsList"){ %>
+    <div class="container">
+        <div class="row">
+            <img class="img-cont" src="/images/characters/<%= legends.characters%>" alt="main image of apex">
+        </div>
+    </div>
+    <% } %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Apex Legends</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/legends">Legends</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <% if(pageID == "legendsList"){ %>
+    <% for( let index = 0; index < photos.length; index++){ %>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <a href="/legends/<%= index %>">
+                <img class="small-img mt-5" src="/images/characters/<%= photos[index]%>" alt="img of characters">
+            </a>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+    <% if(pageID != "legendsList"){ %>
+    <h1><%= legends.name %></h1>
+    <h3><%= legends.title %></h3>
+    <h5><%= legends.quote %></h5>
+    <p><%= legends.description %></p>
+    <ul>
+        <li>Real Name: <%= legends.realName %></li>
+        <li>Age: <%= legends.age %></li>
+        <li>Home Planet: <%= legends.homePlanet %></li>
+    </ul>
+
+
+    <% } %>
+</body>
+
+</html>

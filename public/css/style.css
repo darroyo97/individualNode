@@ -1,0 +1,13 @@
+.body{
+    margin: 0;
+    background-color: black;
+    color: white !important;
+}
+.img-cont {
+    height: auto;
+    max-width: 100%;
+}
+.small-img {
+    width: 512px;
+    height: 300px;
+}
