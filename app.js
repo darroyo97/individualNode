@@ -7,6 +7,7 @@ app.set('views', 'views');
 
 app.use(require('./routes/index'));
 app.use(require('./routes/legends'))
+app.use(require('./routes/feedback'))
 
 
 app.listen(3005, () => {
